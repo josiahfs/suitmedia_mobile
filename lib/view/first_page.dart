@@ -109,7 +109,10 @@ class FirstPage extends StatelessWidget {
                   () => ElevatedButton(
                     onPressed: palindromeController.isPalindrome.value &&
                             nameController.text.isNotEmpty
-                        ? () => Get.to(SecondPage(), arguments: nama)
+                        ? () => Get.to(
+                              SecondPage(),
+                              arguments: nama,
+                            )
                         : null,
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
