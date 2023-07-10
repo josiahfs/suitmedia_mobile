@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 class PalindromeController extends GetxController {
   final textController = TextEditingController().obs;
   final isPalindrome = false.obs;
+  final name = ''.obs;
 
   bool checkPalindrome() {
     String enteredText = textController.value.text;

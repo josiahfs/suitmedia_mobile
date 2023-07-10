@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:suitmedia_mobile/view/third_page.dart';
 
-class SecondPage extends StatelessWidget {
-  SecondPage({super.key});
+class ThirdPage extends StatelessWidget {
+  ThirdPage({super.key});
+  var data = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
-    var data = Get.arguments as String;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen',
+        title: Text('Third Screen',
             style: GoogleFonts.poppins(
                 color: const Color(0xff04021D),
                 fontSize: 18,
@@ -35,8 +34,7 @@ class SecondPage extends StatelessWidget {
                         fontWeight: FontWeight.w400),
                   ),
                   Text(
-                    // 'John Doe',
-                    data,
+                    'John Doe',
                     style: GoogleFonts.poppins(
                         color: const Color(0xff04021D),
                         fontSize: 18,
@@ -56,10 +54,7 @@ class SecondPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 16.0),
                 child: ElevatedButton(
-                  onPressed: () {
-                    // Get.to(ThirdPage(), arguments: data);
-                    print(data);
-                  },
+                  onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Color(0xff2B637B)),

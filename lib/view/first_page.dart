@@ -9,6 +9,7 @@ class FirstPage extends StatelessWidget {
   final PalindromeController palindromeController =
       Get.put(PalindromeController());
   final nameController = TextEditingController();
+  String nama = '';
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,6 @@ class FirstPage extends StatelessWidget {
                         border: InputBorder.none,
                         floatingLabelBehavior: FloatingLabelBehavior.never,
                         labelText: 'Name',
-                        // hintText: 'Nama',
                       ),
                     ),
                   ),
@@ -76,13 +76,14 @@ class FirstPage extends StatelessWidget {
                   onPressed: () {
                     palindromeController.checkPalindrome();
                     // palindromeController.name.value = nameController.text;
+                    nama = nameController.text;
                     Future.delayed(const Duration(milliseconds: 100), () {
                       palindromeController.showPalindromeDialog();
                     });
                   },
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(Color(0xff2B637B)),
+                        MaterialStateProperty.all(const Color(0xff2B637B)),
                     foregroundColor: MaterialStateProperty.all(Colors.white),
                     minimumSize: MaterialStateProperty.all(
                         const Size(double.infinity, 40)),
@@ -108,7 +109,7 @@ class FirstPage extends StatelessWidget {
                   () => ElevatedButton(
                     onPressed: palindromeController.isPalindrome.value &&
                             nameController.text.isNotEmpty
-                        ? () => Get.to(SecondPage(), arguments: nameController)
+                        ? () => Get.to(SecondPage(), arguments: nama)
                         : null,
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
